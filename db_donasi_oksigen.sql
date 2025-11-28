@@ -1,0 +1,353 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Nov 28, 2025 at 07:23 AM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `db_donasi_oksigen`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `articles`
+--
+
+CREATE TABLE `articles` (
+  `id` int(11) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `slug` varchar(255) NOT NULL,
+  `content` longtext DEFAULT NULL,
+  `category` varchar(50) DEFAULT NULL,
+  `thumbnail_url` text DEFAULT NULL,
+  `author_id` int(11) NOT NULL,
+  `is_published` tinyint(1) DEFAULT 0,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `articles`
+--
+
+INSERT INTO `articles` (`id`, `title`, `slug`, `content`, `category`, `thumbnail_url`, `author_id`, `is_published`, `created_at`) VALUES
+(1, 'Mengapa Hutan Mangrove Adalah Benteng Pesisir Terbaik', 'mengapa-hutan-mangrove-benteng-terbaik', '<p>Sering dianggap semak belukar yang becek dan berlumpur, Mangrove sebenarnya adalah \"Pasukan Khusus\" penjaga ribuan kilometer garis pantai Indonesia. Mengapa mereka disebut benteng terbaik? Berikut alasannya.</p>\n\n    \n\n    <h4>1. Peredam Ombak Alami yang Tangguh</h4>\n\n    <p>Tidak seperti tembok beton yang kaku dan bisa retak, Mangrove adalah benteng yang hidup. Akar-akar tunjang (prop roots) mereka yang unik berfungsi seperti jari-jari raksasa yang mencengkeram tanah lumpur. Ketika ombak besar atau badai datang, akar-akar ini memecah energi gelombang tersebut sebelum mencapai daratan. Studi menunjukkan bahwa hutan mangrove yang lebat dapat mengurangi energi gelombang hingga 66%. Ini artinya, rumah warga dan lahan pertanian di belakangnya tetap aman dari terjangan air laut.</p>\n\n    <blockquote>\"Membangun tanggul beton butuh biaya miliaran dan perawatan rutin. Menanam Mangrove hanya butuh kepedulian, dan ia akan merawat dirinya sendiri hingga ratusan tahun.\"</blockquote>\n\n\n\n    <h4>2. Penyerap Karbon Super (Blue Carbon)</h4>\n\n    <p>Ini fakta yang jarang orang tahu: Hutan Mangrove dapat menyimpan karbon 3 hingga 5 kali lebih banyak dibandingkan hutan hujan tropis di daratan! Karbon yang diserap dan disimpan di ekosistem pesisir ini disebut Blue Carbon.</p>\n\n\n\n    <h4>3. \"TK\" dan \"Rumah Sakit\" Bagi Biota Laut</h4>\n\n    <p>Coba perhatikan sela-sela akar mangrove. Di sanalah kehidupan bermula. Akar mangrove yang rumit menyediakan tempat persembunyian yang aman bagi anak-anak ikan, udang, dan kepiting dari predator besar.</p>', 'Manfaat Hutan', 'https://amf.or.id/wp-content/uploads/2024/10/cover-13.png', 69, 1, '2025-11-26 20:00:00'),
+(2, 'Satu Pohon, Sejuta Kehidupan: Mengapa Donasi Anda Sangat Berarti', 'satu-pohon-sejuta-kehidupan', '<p>Pernahkah Anda membayangkan betapa besar dampak dari satu bibit pohon yang Anda tanam? Seringkali kita merasa bahwa tindakan kecil tidak akan mengubah dunia. Namun, dalam konteks lingkungan, satu pohon adalah sebuah ekosistem tersendiri.</p><p>Satu pohon dewasa mampu memproduksi oksigen yang cukup untuk kebutuhan bernapas 2 orang dewasa setiap harinya. Selain itu, akar pohon berfungsi sebagai penahan air tanah, mencegah erosi, dan menyaring polutan berbahaya.</p><h4>Dampak Jangka Panjang</h4><p>Donasi pohon bukan sekadar menanam, melainkan investasi masa depan. Pohon yang kita tanam hari ini akan menjadi peneduh bagi anak cucu kita, menurunkan suhu mikro kota, dan menjadi rumah bagi ribuan spesies serangga dan burung.</p>', 'Manfaat Oksigen', 'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=800&q=80', 2, 1, '2025-11-26 22:11:03'),
+(3, 'Mengenal Mangrove: Perisai Hijau Pelindung Pesisir Indonesia', 'mengenal-mangrove-pelindung-pesisir', '<p>Indonesia adalah salah satu negara dengan garis pantai terpanjang di dunia. Namun, ancaman abrasi dan kenaikan permukaan air laut semakin nyata. Di sinilah peran vital hutan mangrove.</p><p>Akar mangrove yang kuat mencengkeram tanah lumpur, menahan gempuran ombak, dan mencegah daratan terkikis ke laut. Selain fungsi fisiknya, hutan mangrove adalah \"supermarket\" bagi biota laut. Ikan, udang, dan kepiting menjadikan akar mangrove sebagai tempat memijah dan mencari makan.</p><blockquote>\"Tanpa mangrove, pesisir kita hanyalah pasir yang menunggu waktu untuk hilang ditelan ombak.\"</blockquote>', 'Wawasan Hijau', 'https://dlh.bulelengkab.go.id/uploads/konten/61_pentingnya-hutan-mangrove-bagi-lingkungan-hidup.jpg', 2, 1, '2025-11-25 22:11:03'),
+(4, 'Hutan Kota: Solusi Cerdas Atasi Polusi Udara di Tengah Kemacetan', 'hutan-kota-solusi-polusi', '<p>Warga perkotaan seringkali dihadapkan pada kualitas udara yang buruk akibat asap kendaraan dan industri. Konsep Hutan Kota (Urban Forest) hadir sebagai solusi alami untuk masalah ini.</p><p>Daun-daun pepohonan di hutan kota berfungsi menyerap partikel debu halus (PM2.5) dan gas beracun seperti Karbon Monoksida (CO). Selain itu, keberadaan taman kota yang rimbun terbukti menurunkan tingkat stres penduduk kota hingga 30%.</p><p>Mari dukung program penghijauan kota dengan mendonasikan pohon untuk taman-taman di sekitar kita.</p>', 'Tips & Aksi', 'https://images.unsplash.com/photo-1444491741275-3747c53c99b4?auto=format&fit=crop&w=800&q=80', 2, 1, '2025-11-24 22:11:03'),
+(5, 'Fakta Mengejutkan: Deforestasi dan Kaitannya dengan Perubahan Iklim', 'fakta-mengejutkan-deforestasi', '<p>Deforestasi atau penggundulan hutan menyumbang sekitar 15% dari emisi gas rumah kaca global. Angka ini lebih besar daripada emisi gabungan dari semua mobil, truk, dan pesawat di seluruh dunia.</p><p>Ketika hutan ditebang atau dibakar, karbon yang tersimpan di dalam pohon dilepaskan kembali ke atmosfer sebagai CO2. Hal ini memperparah efek pemanasan global, menyebabkan cuaca ekstrem yang tidak menentu.</p><p>Menghentikan deforestasi dan melakukan reboisasi (penanaman kembali) adalah cara termurah dan tercepat untuk melawan perubahan iklim saat ini.</p>', 'Ancaman Deforestasi', 'https://static.scientificamerican.com/sciam/cache/file/66AC71F3-06E0-43EC-BEDA9DDA12175F43_source.jpg?w=590&h=800&745DD46B-9EBC-4158-BB397E4D8C3DEDDE', 2, 1, '2025-11-23 22:11:03'),
+(6, 'Langkah Kecil, Dampak Besar: Cara Memulai Gaya Hidup Zero Carbon', 'langkah-kecil-dampak-besar-zero-carbon', '<p>Banyak orang merasa pesimis bisa menyelamatkan bumi sendirian. Padahal, perubahan besar dimulai dari langkah kecil di rumah.</p><h4>Apa yang bisa kita lakukan?</h4><ul><li>Kurangi penggunaan plastik sekali pakai.</li><li>Hemat penggunaan listrik dan air.</li><li>Gunakan transportasi umum atau sepeda.</li><li>Mulai menanam pohon di halaman rumah atau berpartisipasi dalam donasi pohon online.</li></ul><p>Setiap jejak karbon yang kita kurangi memberi napas lega bagi bumi kita.</p>', 'Tips & Aksi', 'https://images.unsplash.com/photo-1542385151-efd9000785a0?auto=format&fit=crop&w=800&q=80', 2, 1, '2025-11-22 22:11:03'),
+(7, 'Investasi Oksigen: Keuntungan Ekonomi dari Melestarikan Hutan', 'investasi-oksigen-keuntungan-ekonomi', '<p>Hutan bukan hanya aset ekologi, tetapi juga aset ekonomi. Hutan yang sehat menyediakan air bersih yang gratis, mencegah banjir yang merugikan miliaran rupiah, dan menjadi objek ekowisata yang menarik.</p><p>Masyarakat yang tinggal di sekitar hutan dapat memanfaatkan hasil hutan bukan kayu (HHBK) seperti madu, rotan, dan buah-buahan tanpa harus menebang pohonnya. Ini adalah model ekonomi berkelanjutan yang perlu kita dukung.</p>', 'Wawasan Hijau', 'https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?auto=format&fit=crop&w=800&q=80', 2, 1, '2025-11-21 22:11:03'),
+(8, 'Rumah Bagi Satwa: Bagaimana Pohon Menjaga Keseimbangan Ekosistem', 'rumah-bagi-satwa-keseimbangan-ekosistem', '<p>Pohon adalah apartemen bertingkat bagi satwa liar. Dari akar hingga tajuk tertinggi, setiap bagian pohon dihuni oleh makhluk hidup yang berbeda.</p><p>Hilangnya satu jenis pohon bisa memutus rantai makanan. Misalnya, jika pohon buah hutan hilang, burung pemakan buah akan punah, dan predator pemakan burung pun akan kehilangan sumber makanannya. Menanam pohon berarti kita juga menyelamatkan satwa-satwa yang bergantung padanya.</p>', 'Manfaat Oksigen', 'https://images.unsplash.com/photo-1437622368342-7a3d73a34c8f?auto=format&fit=crop&w=800&q=80', 2, 1, '2025-11-20 22:11:03');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `donations`
+--
+
+CREATE TABLE `donations` (
+  `id` int(11) NOT NULL,
+  `invoice_number` varchar(50) NOT NULL,
+  `donor_id` int(11) NOT NULL,
+  `tree_type_id` int(11) DEFAULT NULL,
+  `amount` decimal(15,2) NOT NULL,
+  `tree_count` int(11) DEFAULT 0,
+  `payment_status` enum('pending','success','failed','expired','distributed') DEFAULT 'pending',
+  `payment_proof` varchar(255) DEFAULT NULL,
+  `payment_method` varchar(50) DEFAULT NULL,
+  `is_anonymous` tinyint(1) DEFAULT 0,
+  `message` text DEFAULT NULL,
+  `transaction_date` datetime DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `donations`
+--
+
+INSERT INTO `donations` (`id`, `invoice_number`, `donor_id`, `tree_type_id`, `amount`, `tree_count`, `payment_status`, `payment_proof`, `payment_method`, `is_anonymous`, `message`, `transaction_date`) VALUES
+(1, 'INV/2025/001', 1, 1, 100000.00, 2, 'success', NULL, 'gopay', 0, 'Semoga bermanfaat bagi bumi!', '2025-11-24 11:55:01'),
+(2, 'INV/2025/002', 2, 2, 35000.00, 1, 'success', NULL, 'bank_transfer', 0, 'Bismillah.', '2025-11-24 11:55:01'),
+(3, 'INV/DNX/20251127/8632', 3, 1, 100000.00, 10, 'success', NULL, 'SeaBank - Farelino', 0, NULL, '2025-11-27 05:14:46'),
+(4, 'INV/DNX/20251127/4953', 4, 1, 20000.00, 2, 'success', NULL, 'QRIS', 1, NULL, '2025-11-27 05:39:22'),
+(5, 'INV/DNX/20251127/2702', 3, 3, 20000.00, 2, 'success', NULL, 'SeaBank - Farelino', 1, NULL, '2025-11-27 11:51:34'),
+(6, 'INV/DNX/20251127/7961', 5, 2, 500000.00, 50, 'success', NULL, 'QRIS', 0, NULL, '2025-11-27 13:32:29'),
+(9, 'INV/DNX/20251127/6440', 6, 3, 1000000.00, 100, 'success', NULL, 'BNI - Adhafa Putranto', 0, NULL, '2025-11-27 13:39:41'),
+(10, 'INV/DNX/20251127/6503', 7, 1, 20000.00, 2, 'success', 'bukti_1764247721_481.jpeg', 'Mandiri - Adhafa Joan', 0, NULL, '2025-11-27 13:48:41'),
+(11, 'INV/DNX/20251127/7783', 3, 1, 100000.00, 10, 'success', 'bukti_1764251339_412.png', 'Mandiri - Adhafa Joan', 0, NULL, '2025-11-27 14:48:59'),
+(12, 'INV/DNX/20251127/3851', 8, 3, 100000.00, 10, 'success', 'bukti_1764251569_796.png', 'QRIS', 0, NULL, '2025-11-27 14:52:49'),
+(13, 'INV/DNX/20251127/7370', 9, 3, 20000.00, 2, 'success', 'bukti_1764252308_473.webp', 'QRIS', 0, NULL, '2025-11-27 15:05:08'),
+(14, 'INV/DNX/20251127/2229', 10, 3, 10000.00, 1, 'success', 'bukti_1764254520_837.png', 'QRIS', 0, NULL, '2025-11-27 15:42:00'),
+(15, 'INV/DNX/20251127/3755', 10, 1, 20000.00, 2, 'success', 'bukti_1764255739_941.jpg', 'QRIS', 0, NULL, '2025-11-27 16:02:19'),
+(16, 'INV/DNX/20251127/1618', 10, 1, 20000.00, 2, 'success', 'bukti_1764257684_687.png', 'QRIS', 0, NULL, '2025-11-27 16:34:44'),
+(17, 'INV/DNX/20251127/3231', 10, 3, 100000.00, 10, 'success', 'bukti_1764258640_604.png', 'QRIS', 0, NULL, '2025-11-27 16:50:40'),
+(18, 'INV/DNX/20251127/9089', 10, 2, 100000.00, 10, 'distributed', 'bukti_1764259106_323.png', 'QRIS', 0, NULL, '2025-11-27 16:58:26'),
+(19, 'INV/DNX/20251127/5166', 11, 2, 5000000.00, 500, 'distributed', 'bukti_1764260052_222.png', 'QRIS', 0, NULL, '2025-11-27 17:14:12'),
+(20, 'INV/DNX/20251128/4845', 12, 1, 50000.00, 5, 'distributed', 'bukti_1764291943_816.jpg', 'QRIS', 0, NULL, '2025-11-28 02:05:43'),
+(21, 'INV/DNX/20251128/8904', 10, 2, 50000.00, 5, 'pending', 'bukti_1764298879_824.png', 'QRIS', 0, NULL, '2025-11-28 04:01:19'),
+(22, 'INV/DNX/20251128/1368', 10, 1, 50000.00, 5, 'success', 'bukti_1764303161_318.png', 'Shopeepay - Farelino', 0, NULL, '2025-11-28 05:12:41');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `donors`
+--
+
+CREATE TABLE `donors` (
+  `id` int(11) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `phone` varchar(20) DEFAULT NULL,
+  `address` text DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `donors`
+--
+
+INSERT INTO `donors` (`id`, `name`, `email`, `phone`, `address`, `created_at`) VALUES
+(1, 'Adhafa Joan', 'adhafa@email.com', '08123456789', NULL, '2025-11-23 21:54:59'),
+(2, 'Kelfin Farelino', 'kelfin@email.com', '08987654321', NULL, '2025-11-23 21:54:59'),
+(3, 'Adhafa JP', 'adhafa.j.p@gmail.com', '088706731973', NULL, '2025-11-26 21:10:05'),
+(4, 'Adhafa Joan Putranto', 'adhafajoanp9999@gmail.com', '088706731973', NULL, '2025-11-26 21:39:22'),
+(5, 'Monkey D Luffy', 'monkey@test.com', '089969996999', NULL, '2025-11-27 05:32:29'),
+(6, 'Dragon D Monkey', 'dragon@test.ocm', '08123123123', NULL, '2025-11-27 05:39:41'),
+(7, 'A', 'adhafanoob9999@gmail.com', '088706731973', NULL, '2025-11-27 05:48:41'),
+(8, 'Lalalala', 'lalalala@gmail.com', '0123123123', NULL, '2025-11-27 06:52:49'),
+(9, 'Adhafa JP', 'adhafajp@gmail.com', '089516656371', NULL, '2025-11-27 07:05:08'),
+(10, 'Oktavian Prasetya Adi', 'farelinokelvin@gmail.com', '083894159607', NULL, '2025-11-27 14:42:00'),
+(11, 'Jeremy', 'jere@anjay.com', '0811228866999', NULL, '2025-11-27 16:14:12'),
+(12, 'Ikan Bakar Cianjur', 'kelfin@gmail.com', '083894159607', NULL, '2025-11-28 01:05:43');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `locations`
+--
+
+CREATE TABLE `locations` (
+  `id` int(11) NOT NULL,
+  `name` varchar(150) NOT NULL,
+  `latitude` decimal(10,8) DEFAULT NULL,
+  `longitude` decimal(11,8) DEFAULT NULL,
+  `target_trees` int(11) DEFAULT 0,
+  `planted_trees` int(11) DEFAULT 0,
+  `image_url` text DEFAULT NULL,
+  `description` text DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `locations`
+--
+
+INSERT INTO `locations` (`id`, `name`, `latitude`, `longitude`, `target_trees`, `planted_trees`, `image_url`, `description`) VALUES
+(1, 'Hutan Kota Srengseng', -6.21623900, 106.76451600, 1000, 150, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6g7KyAn_WoI7lPe64MfzwAdS4hFnHCvPVSQ&s', 'Hutan kota seluas 15 hektar di Jakarta Barat, memiliki danau buatan dan berfungsi sebagai daerah resapan air.'),
+(2, 'Pesisir Pantai Indah Kapuk', -6.11059900, 106.73693600, 5000, 1200, 'https://asset.kompas.com/crops/W9cS_ExpyZ6iVY_e9AQRU1AAJWQ=/87x0:1035x632/1200x800/data/photo/2021/10/26/6178142e88b0f.png', 'Kawasan ekowisata dan konservasi mangrove di pesisir utara Jakarta yang berfungsi mencegah abrasi air laut.');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `messages`
+--
+
+CREATE TABLE `messages` (
+  `id` int(11) NOT NULL,
+  `donation_id` int(11) DEFAULT NULL,
+  `sender_name` varchar(100) DEFAULT NULL,
+  `message_content` text NOT NULL,
+  `is_approved` tinyint(1) DEFAULT 0,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tree_types`
+--
+
+CREATE TABLE `tree_types` (
+  `id` int(11) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `price` decimal(10,2) NOT NULL,
+  `oxygen_emission` decimal(10,2) DEFAULT NULL,
+  `co2_absorption` decimal(10,2) DEFAULT NULL,
+  `image_url` text DEFAULT NULL,
+  `description` text DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `tree_types`
+--
+
+INSERT INTO `tree_types` (`id`, `name`, `price`, `oxygen_emission`, `co2_absorption`, `image_url`, `description`) VALUES
+(1, 'Mangga', 50000.00, 200.50, 25.00, NULL, 'Pohon buah yang rindang dan menghasilkan O2 tinggi.'),
+(2, 'Mahoni', 35000.00, 180.00, 30.00, NULL, 'Pohon kayu keras yang sangat baik menyerap polutan jalan raya.'),
+(3, 'Bakau', 10000.00, 120.00, 50.00, NULL, 'Pencegah abrasi.');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `role` enum('admin','editor') DEFAULT 'editor',
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `name`, `email`, `password`, `role`, `created_at`) VALUES
+(1, 'Admin Utama', 'admin@donasioksigen.com', '$2y$10$r.v.d.v.d.v.d.v.d.v.d.Ou7y8y8y8y8y8y8y8y8y8y8y8y8y', 'admin', '2025-11-23 21:54:58'),
+(2, 'Adhafa Joan Putranto', 'adhafa.j.p@gmail.com', '$2y$10$cEFgApUL9heGqpAXkyNYqOjxRjB3cJeTBzqR5UVFmUh8qj4oSrnaq', 'admin', '2025-11-23 21:58:08'),
+(69, 'Admin', 'admin@gmail.com', '$2y$10$r.v.d.v.d.v.d.v.d.v.d.Ou7y8y8y8y8y8y8y8y8y8y8y8y8y', 'admin', '2025-11-26 21:50:50'),
+(70, 'Kelfin Farelino', 'kelfin@gmail.com', '$2y$10$XGGI1dC/FQHXOz1H1/JlKO9rYMGMmVVCyWBhQdfTpw.M0VJhN0XRW', 'admin', '2025-11-27 05:25:10'),
+(71, 'farelino kelfin', 'farelinokelvin@gmail.com', '$2y$10$2GAOMAm3OtDMhpLD.dHf2OF37Sje.05r.WTWUxcWtQqTzfWp9Y9eO', 'editor', '2025-11-27 15:33:19');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `articles`
+--
+ALTER TABLE `articles`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `slug` (`slug`),
+  ADD KEY `fk_articles_author` (`author_id`);
+
+--
+-- Indexes for table `donations`
+--
+ALTER TABLE `donations`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `invoice_number` (`invoice_number`),
+  ADD KEY `fk_donations_donor` (`donor_id`),
+  ADD KEY `fk_donations_tree` (`tree_type_id`);
+
+--
+-- Indexes for table `donors`
+--
+ALTER TABLE `donors`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `email` (`email`);
+
+--
+-- Indexes for table `locations`
+--
+ALTER TABLE `locations`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `messages`
+--
+ALTER TABLE `messages`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_messages_donation` (`donation_id`);
+
+--
+-- Indexes for table `tree_types`
+--
+ALTER TABLE `tree_types`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `email` (`email`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `articles`
+--
+ALTER TABLE `articles`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT for table `donations`
+--
+ALTER TABLE `donations`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+
+--
+-- AUTO_INCREMENT for table `donors`
+--
+ALTER TABLE `donors`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- AUTO_INCREMENT for table `locations`
+--
+ALTER TABLE `locations`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `messages`
+--
+ALTER TABLE `messages`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `tree_types`
+--
+ALTER TABLE `tree_types`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `articles`
+--
+ALTER TABLE `articles`
+  ADD CONSTRAINT `fk_articles_author` FOREIGN KEY (`author_id`) REFERENCES `users` (`id`);
+
+--
+-- Constraints for table `donations`
+--
+ALTER TABLE `donations`
+  ADD CONSTRAINT `fk_donations_donor` FOREIGN KEY (`donor_id`) REFERENCES `donors` (`id`),
+  ADD CONSTRAINT `fk_donations_tree` FOREIGN KEY (`tree_type_id`) REFERENCES `tree_types` (`id`) ON DELETE SET NULL;
+
+--
+-- Constraints for table `messages`
+--
+ALTER TABLE `messages`
+  ADD CONSTRAINT `fk_messages_donation` FOREIGN KEY (`donation_id`) REFERENCES `donations` (`id`) ON DELETE SET NULL;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

@@ -1,0 +1,154 @@
+/* admin_donasi.css - GABUNGAN STYLE */
+
+/* --- 1. BASE & SIDEBAR (Persis admin_artikel.css) --- */
+:root { 
+    --sidebar-bg: #0B2B1E; 
+    --active-bg: #1A3C2F; 
+    --green-brand: #4CAF50; 
+    --text-dark: #111827;
+    --text-gray: #6B7280;
+    --bg-light: #F9FAFB;
+}
+
+body { 
+    font-family: 'Inter', sans-serif; 
+    background-color: var(--bg-light); 
+}
+
+/* Sidebar Container */
+.sidebar { 
+    width: 250px; 
+    background: var(--sidebar-bg); 
+    min-height: 100vh; 
+    position: fixed; 
+    padding: 25px; 
+    color: white; 
+    z-index: 1000;
+}
+
+/* Logo/Brand */
+.sidebar .brand { 
+    margin-bottom: 20px; 
+    display: flex; 
+    align-items: center; 
+    padding-left: 0; 
+}
+
+.sidebar .brand img { 
+    max-width: 180px; 
+    height: auto; 
+    display: block; 
+}
+
+.sidebar .brand span { 
+    color: white; 
+    font-weight: 600; 
+}
+
+/* Menu Links (PENTING: Nama class harus .nav-link) */
+.nav-link { 
+    color: #A0B0A8; 
+    padding: 12px 15px; 
+    border-radius: 8px; 
+    margin-bottom: 5px; 
+    font-weight: 500; 
+    display: flex; /* Supaya icon dan text sejajar */
+    align-items: center;
+    text-decoration: none; 
+    transition: 0.2s;
+}
+
+.nav-link:hover { 
+    color: white; 
+    background: rgba(255,255,255,0.05); 
+}
+
+.nav-link.active { 
+    background: var(--active-bg); 
+    color: white; 
+    border-left: 4px solid var(--green-brand); 
+}
+
+/* --- 2. MAIN CONTENT LAYOUT --- */
+.main-content { 
+    margin-left: 250px; 
+    padding: 40px; 
+}
+
+.page-title { 
+    font-weight: 700; 
+    font-size: 24px; 
+    margin-bottom: 5px; 
+    color: var(--text-dark);
+}
+
+.page-subtitle { 
+    color: var(--text-gray); 
+    font-size: 14px; 
+    margin-bottom: 30px; 
+}
+
+/* --- 3. TABS (Menu Atas - Khusus Donasi) --- */
+.nav-tabs {
+    border-bottom: 1px solid #E5E7EB;
+    margin-bottom: 20px;
+    gap: 10px;
+}
+
+.nav-tabs .nav-link {
+    /* Override nav-link sidebar untuk tab atas */
+    background: transparent;
+    border: none;
+    color: var(--text-gray);
+    border-bottom: 2px solid transparent;
+    border-radius: 0;
+}
+
+.nav-tabs .nav-link:hover {
+    color: var(--green-brand);
+    background: transparent;
+}
+
+.nav-tabs .nav-link.active {
+    background: transparent;
+    color: var(--text-dark);
+    font-weight: 600;
+    border-left: none; /* Reset border sidebar */
+    border-bottom: 2px solid var(--text-dark);
+}
+
+/* --- 4. TABLE & BADGES --- */
+.card-custom {
+    background: white;
+    border-radius: 12px;
+    border: 1px solid #E5E7EB;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    overflow: hidden;
+}
+
+.table { margin-bottom: 0; }
+
+.table thead th {
+    background: #F9FAFB;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-gray);
+    text-transform: uppercase;
+    padding: 15px 20px;
+    border-bottom: 1px solid #E5E7EB;
+}
+
+.table tbody td {
+    padding: 20px;
+    vertical-align: middle;
+    border-bottom: 1px solid #F3F4F6;
+    color: var(--text-dark);
+}
+
+/* Status Badges */
+.badge-pending { background: #FFF7ED; color: #C2410C; border: 1px solid #FFEDD5; padding: 4px 10px; border-radius: 20px; font-size: 11px; font-weight: 600;}
+.badge-success { background: #ECFDF5; color: #047857; border: 1px solid #D1FAE5; padding: 4px 10px; border-radius: 20px; font-size: 11px; font-weight: 600;}
+.badge-distributed { background: #EFF6FF; color: #1D4ED8; border: 1px solid #DBEAFE; padding: 4px 10px; border-radius: 20px; font-size: 11px; font-weight: 600;}
+
+/* Buttons */
+.btn-action { padding: 6px 12px; font-size: 12px; border-radius: 6px; font-weight: 500; }
